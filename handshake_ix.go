@@ -424,7 +424,7 @@ func ixHandshakeStage2(f *Interface, addr *udp.Addr, via interface{}, hostinfo *
 			Info("Incorrect host responded to handshake")
 
 		// Release our old handshake from pending, it should not continue
-		f.handshakeManager.pendingHostMap.DeleteHostInfo(hostinfo)
+		f.handshakeManager.DeleteHostInfo(hostinfo)
 
 		// Create a new hostinfo/handshake for the intended vpn ip
 		//TODO: this adds it to the timer wheel in a way that aggressively retries
